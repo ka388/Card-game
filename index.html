@@ -5,69 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        .main-container {
-            margin-top: 50px;
-        }
-        #card-board {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .card {
-            width: 100px;
-            height: 150px;
-            background-color: gray;
-            display: inline-block;
-            margin: 10px;
-            text-align: center;
-            line-height: 150px;
-            font-size: 24px;
-            color: white;
-            border-radius: 10px;
-            transition: background 0.5s, color 0.5s;
-        }
-        .hidden {
-            background-color: black;
-            color: black; /* Hide text */
-        }
-    </style>
+    <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-   <div class="main-container">
-       <div id="card-board">
-           <!-- Cards will be generated dynamically -->
+   <div class = "main-container">
+       <div id = "card-board">
+           <!--  -->
        </div>
    </div> 
 
-   <script>
-       document.addEventListener("DOMContentLoaded", function () {
-           const cardBoard = document.getElementById("card-board");
-           const cards = ["A", "B", "C", "D", "E", "F", "G", "H"]; // Example card values
-
-           // Duplicate and shuffle the cards
-           let deck = [...cards, ...cards].sort(() => Math.random() - 0.5);
-
-           // Create card elements
-           deck.forEach((value) => {
-               let card = document.createElement("div");
-               card.classList.add("card");
-               card.textContent = value;
-               cardBoard.appendChild(card);
-           });
-
-           // Flash cards for 5 seconds, then hide them
-           setTimeout(() => {
-               document.querySelectorAll(".card").forEach(card => {
-                   card.classList.add("hidden"); // Hide all cards after 5 seconds
-               });
-           }, 5000);
-       });
-   </script>
+   <script src = "script.js"></script>
 </body>
 </html>
